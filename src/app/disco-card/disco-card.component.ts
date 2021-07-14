@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Disco } from '../disco.model';
 
 @Component({
-  selector: 'app-disco-card',
+  selector: 'disco-card',
   templateUrl: './disco-card.component.html',
   styleUrls: ['./disco-card.component.css']
 })
-export class DiscoCardComponent implements OnInit {
+export class DiscoCardComponent {
+  @Input() disco: Disco;
 
-  constructor() { }
+  @Output() comprar = new EventEmitter<Disco>();
 
-  ngOnInit(): void {
+  constructor() {}
+
+  public onClickComprar() {
+    this.comprar.emit(this.disco);
   }
-
 }

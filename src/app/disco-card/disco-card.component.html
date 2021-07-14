@@ -1,1 +1,17 @@
-<p>disco-card works!</p>
+<div class="disco-card">
+  <img
+    src="{{ disco.imagem }}"
+    alt="{{ disco.nome }}"
+    width="200"
+    height="200"
+  />
+  <br />
+  {{ disco.nome }} - {{ disco.ano }} <br />
+  <span>
+    {{ disco.estoque ? disco.estoque + " em estoque" : "Fora de estoque" }}
+  </span>
+  <br />
+  <button type="button" *ngIf="disco.estoque" (click)="onClickComprar()">
+    Comprar
+  </button>
+</div>
