@@ -8,9 +8,6 @@ import { FormControl } from '@angular/forms';
 })
 export class AppComponent {
   public title = 'capacitacao-apollus';
-  public nome = 'Rodrigo';
-
-  public idade = 24;
 
   public listaCards = [
     'Primeiro card',
