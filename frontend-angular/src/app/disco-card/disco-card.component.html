@@ -14,4 +14,7 @@
   <button type="button" *ngIf="disco.estoque" (click)="onClickComprar()">
     Comprar
   </button>
+  <button type="button" name="button" routerLink="/edicao/{{ disco.id }}">
+    Editar
+  </button>
 </div>

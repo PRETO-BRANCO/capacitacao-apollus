@@ -1,7 +1,8 @@
 import { Disco, Genero } from './disco.model';
 
-export const discos = [
+export const discos: Disco[] = [
   {
+    id: 0,
     nome: 'Number of the Beast',
     banda: 0,
     ano: 1982,
@@ -12,6 +13,7 @@ export const discos = [
     estoque: 5
   },
   {
+    id: 1,
     nome: 'Dois',
     banda: 1,
     ano: 1986,
@@ -22,6 +24,7 @@ export const discos = [
     estoque: 3
   },
   {
+    id: 2,
     nome: 'Lado B Lado A',
     banda: 2,
     ano: 1999,

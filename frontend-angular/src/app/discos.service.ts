@@ -20,7 +20,7 @@ export class DiscosService {
   public buscarDisco(index: number): Observable<Disco> {
     return new Observable(subscriber => {
       setTimeout(() => {
-        subscriber.next(discos[index]);
+        subscriber.next(discos.find(disco => disco.id == index));
         subscriber.complete();
       }, 2000);
     });

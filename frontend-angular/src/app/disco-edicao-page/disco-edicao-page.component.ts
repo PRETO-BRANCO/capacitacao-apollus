@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DiscosService } from '../discos.service';
 import { Disco } from '../disco.model';
@@ -13,10 +14,16 @@ import { Validators } from '@angular/forms';
 export class DiscoEdicaoPageComponent implements OnInit {
   public form: FormGroup;
 
-  constructor(private fb: FormBuilder, private service: DiscosService) {}
+  constructor(
+    private fb: FormBuilder,
+    private service: DiscosService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.service.buscarDisco(1).subscribe((disco: Disco) => {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.service.buscarDisco(id).subscribe((disco: Disco) => {
       this.form = this.fb.group({
         nome: [disco.nome, [Validators.required]],
         banda: [disco.banda, [Validators.required]],

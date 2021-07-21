@@ -1,4 +1,5 @@
 export interface Disco {
+  id: number;
   nome: string;
   banda: number;
   ano: number;
