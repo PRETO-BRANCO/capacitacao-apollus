@@ -1,0 +1,30 @@
+.form {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.input {
+  margin: 1em auto;
+}
+
+.input > input,
+.input > select {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid #999 1px;
+}
+
+.input > label {
+  width: 100%;
+  display: block;
+}
+
+.erro {
+  background-color: red;
+  color: white;
+  padding: 0.5em;
+  border-radius: 5px;
+  margin-top: 0.5em;
+}

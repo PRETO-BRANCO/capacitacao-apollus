@@ -1,0 +1,88 @@
+<form class="form" [formGroup]="form">
+  <div class="input">
+    <label for="nome">Nome do disco</label>
+    <input type="text" name="nome" formControlName="nome" />
+    <div
+      class="erro"
+      *ngIf="!form.get('nome').valid && !form.get('nome').pristine"
+    >
+      <span *ngIf="form.get('nome').errors.required">Campo obrigatório</span>
+    </div>
+  </div>
+
+  <div class="input">
+    <label for="banda">Banda</label>
+    <select class="" name="banda" formControlName="banda">
+      <option value="">Escolha</option>
+
+      <option [value]="banda.id" *ngFor="let banda of banda$ | async">
+        {{ banda.nome }}</option
+      >
+    </select>
+    <div
+      class="erro"
+      *ngIf="!form.get('banda').valid && !form.get('banda').pristine"
+    >
+      <span *ngIf="form.get('banda').errors.required">Campo obrigatório</span>
+    </div>
+  </div>
+
+  <div class="input">
+    <label for="ano">Ano</label>
+    <input type="text" name="ano" formControlName="ano" />
+    <div
+      class="erro"
+      *ngIf="!form.get('ano').valid && !form.get('ano').pristine"
+    >
+      <span *ngIf="form.get('ano').errors.required">Campo obrigatório</span>
+      <span *ngIf="form.get('ano').errors.min"
+        >Ano fora do período disponível: mínimo
+        {{ form.get("ano").errors.min.min }}</span
+      >
+      <span *ngIf="form.get('ano').errors.max"
+        >Ano fora do período disponível: máximo
+        {{ form.get("ano").errors.max.max }}</span
+      >
+    </div>
+  </div>
+  <div class="input">
+    <label for="imagem">Imagem</label>
+    <input type="text" name="imagem" formControlName="imagem" />
+    <div
+      class="erro"
+      *ngIf="!form.get('imagem').valid && !form.get('imagem').pristine"
+    >
+      <span *ngIf="form.get('imagem').errors.required">Campo obrigatório</span>
+    </div>
+  </div>
+
+  <div class="input">
+    <label for="preco">Preço</label>
+    <input type="number" name="preco" formControlName="preco" />
+    <div
+      class="erro"
+      *ngIf="!form.get('preco').valid && !form.get('preco').pristine"
+    >
+      <span *ngIf="form.get('preco').errors.required">Campo obrigatório</span>
+      <span *ngIf="form.get('preco').errors.min"
+        >Valor menor que o mínimo {{ form.get("preco").errors.min.min }}</span
+      >
+    </div>
+  </div>
+
+  <div class="input">
+    <label for="estoque">Estoque</label>
+    <input type="number" name="estoque" formControlName="estoque" />
+    <div
+      class="erro"
+      *ngIf="!form.get('estoque').valid && !form.get('estoque').pristine"
+    >
+      <span *ngIf="form.get('estoque').errors.required">Campo obrigatório</span>
+      <span *ngIf="form.get('estoque').errors.min"
+        >Valor menor que o mínimo {{ form.get("estoque").errors.min.min }}</span
+      >
+    </div>
+  </div>
+
+  <button type="button" name="button" (click)="submitForm()">Salvar</button>
+</form>
