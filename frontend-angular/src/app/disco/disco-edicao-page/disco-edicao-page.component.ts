@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { DiscosService } from '../discos.service';
-import { Disco } from '../disco.model';
+import { DiscosService } from '../../discos.service';
+import { Disco } from '../../disco.model';
 
 import { Validators } from '@angular/forms';
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Disco } from '../disco.model';
-import { DiscosService } from '../discos.service';
+import { Disco } from '../../disco.model';
+import { DiscosService } from '../../discos.service';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'disco-lista-page',
@@ -10,7 +12,7 @@ import { DiscosService } from '../discos.service';
 export class DiscoListaPageComponent implements OnInit {
   public lista: Disco[] = [];
 
-  constructor(private service: DiscosService) {}
+  constructor(private service: DiscosService, private router: Router) {}
 
   ngOnInit(): void {
     this.service
@@ -26,5 +28,10 @@ export class DiscoListaPageComponent implements OnInit {
         alert('Erro ao comprar');
       }
     });
+  }
+
+  public editar(id: number) {
+    // routerLink="/edicao/{{ disco.id }}"
+    this.router.navigateByUrl('/edicao/' + id);
   }
 }
