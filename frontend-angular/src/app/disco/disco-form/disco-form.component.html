@@ -3,7 +3,17 @@
     <h2>Formulário</h2>
     <div class="input">
       <label for="nome">Nome do disco</label>
-      <input type="text" name="nome" formControlName="nome" />
+      <input
+        [class.input-sucesso]="
+          form.get('nome').valid && !form.get('nome').pristine
+        "
+        [class.input-erro]="
+          form.get('nome').invalid && !form.get('nome').pristine
+        "
+        type="text"
+        name="nome"
+        formControlName="nome"
+      />
       <div
         class="erro"
         *ngIf="!form.get('nome').valid && !form.get('nome').pristine"
@@ -14,7 +24,16 @@
 
     <div class="input">
       <label for="banda">Banda</label>
-      <select class="" name="banda" formControlName="banda">
+      <select
+        [class.input-sucesso]="
+          form.get('banda').valid && !form.get('banda').pristine
+        "
+        [class.input-erro]="
+          form.get('banda').invalid && !form.get('banda').pristine
+        "
+        name="banda"
+        formControlName="banda"
+      >
         <option value="">Escolha</option>
 
         <option [value]="banda.id" *ngFor="let banda of banda$ | async">
@@ -31,7 +50,17 @@
 
     <div class="input">
       <label for="ano">Ano</label>
-      <input type="text" name="ano" formControlName="ano" />
+      <input
+        [class.input-sucesso]="
+          form.get('ano').valid && !form.get('ano').pristine
+        "
+        [class.input-erro]="
+          form.get('ano').invalid && !form.get('ano').pristine
+        "
+        type="text"
+        name="ano"
+        formControlName="ano"
+      />
       <div
         class="erro"
         *ngIf="!form.get('ano').valid && !form.get('ano').pristine"
@@ -49,7 +78,17 @@
     </div>
     <div class="input">
       <label for="imagem">Imagem</label>
-      <input type="text" name="imagem" formControlName="imagem" />
+      <input
+        [class.input-sucesso]="
+          form.get('imagem').valid && !form.get('imagem').pristine
+        "
+        [class.input-erro]="
+          form.get('imagem').invalid && !form.get('imagem').pristine
+        "
+        type="text"
+        name="imagem"
+        formControlName="imagem"
+      />
       <div
         class="erro"
         *ngIf="!form.get('imagem').valid && !form.get('imagem').pristine"
@@ -62,7 +101,17 @@
 
     <div class="input">
       <label for="preco">Preço</label>
-      <input type="number" name="preco" formControlName="preco" />
+      <input
+        [class.input-sucesso]="
+          form.get('preco').valid && !form.get('preco').pristine
+        "
+        [class.input-erro]="
+          form.get('preco').invalid && !form.get('preco').pristine
+        "
+        type="number"
+        name="preco"
+        formControlName="preco"
+      />
       <div
         class="erro"
         *ngIf="!form.get('preco').valid && !form.get('preco').pristine"
@@ -76,7 +125,17 @@
 
     <div class="input">
       <label for="estoque">Estoque</label>
-      <input type="number" name="estoque" formControlName="estoque" />
+      <input
+        [class.input-sucesso]="
+          form.get('estoque').valid && !form.get('estoque').pristine
+        "
+        [class.input-erro]="
+          form.get('estoque').invalid && !form.get('estoque').pristine
+        "
+        type="number"
+        name="estoque"
+        formControlName="estoque"
+      />
       <div
         class="erro"
         *ngIf="!form.get('estoque').valid && !form.get('estoque').pristine"

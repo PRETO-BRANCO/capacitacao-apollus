@@ -31,9 +31,17 @@
 }
 
 .erro {
-  background-color: red;
+  background-color: #ff5050;
   color: white;
   padding: 0.5em;
   border-radius: 5px;
   margin-top: 0.5em;
+}
+
+.input-erro {
+  background: #ff5050;
+}
+
+.input-sucesso {
+  background: #00cc00;
 }

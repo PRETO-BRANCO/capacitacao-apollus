@@ -1,0 +1,25 @@
+.body {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header > a {
+  text-decoration: none;
+  color: inherit;
+  flex: 1 1 33%;
+  font-size: 2em;
+  text-align: center;
+  padding: 0.5em;
+  margin: 0.5em;
+  border: solid #f7eace 2px;
+}
+
+.router {
+  width: 100%;
+  display: flex;
+}

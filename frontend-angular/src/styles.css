@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  background-color: #85b7b6;
+  color: #f7eace;
+  font-family: "Passion One", cursive;
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-weight: normal;
+}
+
+.button {
+  padding: 0.25em;
+  border-radius: 0.25em;
+  border: solid #f7eace 2px;
+  outline: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.25em;
+  font-family: "Passion One", cursive;
+  font-size: 1.25em;
+}
+
+.button-solid {
+  background: #f7eace;
+  color: #85b7b6;
+}
+
+.button-outline {
+  background: #85b7b6;
+  color: #f7eace;
+}
+
+* {
+  box-sizing: border-box;
+}

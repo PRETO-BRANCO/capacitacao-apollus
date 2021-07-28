@@ -1,20 +1,36 @@
 <div class="disco-card">
-  <img
-    src="{{ disco.imagem }}"
-    alt="{{ disco.nome }}"
-    width="200"
-    height="200"
-  />
-  <br />
-  {{ disco.nome }} - {{ disco.ano }} <br />
-  <span>
-    {{ disco.estoque ? disco.estoque + " em estoque" : "Fora de estoque" }}
-  </span>
-  <br />
-  <button type="button" *ngIf="disco.estoque" (click)="onClickComprar()">
-    Comprar
-  </button>
-  <button type="button" name="button" (click)="onClickEditar()">
-    Editar
-  </button>
+  <div class="card-img">
+    <img
+      src="{{ disco.imagem }}"
+      alt="{{ disco.nome }}"
+      width="200"
+      height="200"
+    />
+  </div>
+  <div class="card-title">{{ disco.nome }} - {{ disco.ano }}</div>
+  <div class="card-body">
+    <div>
+      <span>
+        {{ disco.estoque ? disco.estoque + " em estoque" : "Fora de estoque" }}
+      </span>
+    </div>
+    <div class="buttons">
+      <button
+        class="button button-solid"
+        type="button"
+        *ngIf="disco.estoque"
+        (click)="onClickComprar()"
+      >
+        Comprar
+      </button>
+      <button
+        class="button button-outline"
+        type="button"
+        name="button"
+        (click)="onClickEditar()"
+      >
+        Editar
+      </button>
+    </div>
+  </div>
 </div>
