@@ -1,0 +1,8 @@
+<h1>Discos Cadastrados</h1>
+<div class="disco-card-container">
+  <disco-card
+  *ngFor="let disco of lista"
+  [disco]="disco"
+  (comprar)="comprar($event)"
+  ></disco-card>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Disco } from '../disco.model';
+import { Disco } from '../../disco.model';
 
 @Component({
   selector: 'disco-card',

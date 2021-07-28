@@ -1,0 +1,27 @@
+<div class="disco-card">
+  <div class="card-img">
+    <img
+    src="{{ disco.imagem }}"
+    alt="{{ disco.nome }}"
+    />
+  </div>
+  <div class="card-title">
+    {{ disco.nome }} - {{ disco.ano }}
+  </div>
+  <div class="card-body">
+    <div>
+      {{ disco.estoque ? disco.estoque + " em estoque" : "Fora de estoque" }}
+    </div>
+    <div *ngIf="disco.estoque">
+      R$ {{disco.preco}},00
+    </div>
+    <div class="buttons">
+      <button class="button button-outline" type="button" name="button" routerLink="/edicao/{{ disco.id }}">
+        Editar
+      </button>
+      <button class="button button-solid" type="button" *ngIf="disco.estoque" (click)="onClickComprar()">
+        Comprar
+      </button>
+    </div>
+  </div>
+</div>

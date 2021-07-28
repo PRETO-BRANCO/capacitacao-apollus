@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { BandasService } from '../bandas.service';
+import { BandasService } from '../../bandas.service';
 
 import { FormGroup } from '@angular/forms';
-import { Disco } from '../disco.model';
-import { Banda } from '../banda.model';
+import { Disco } from '../../disco.model';
+import { Banda } from '../../banda.model';
 
 import { Observable } from 'rxjs';
 

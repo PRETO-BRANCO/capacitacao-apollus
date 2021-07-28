@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Disco } from '../disco.model';
-import { DiscosService } from '../discos.service';
+import { Disco } from '../../disco.model';
+import { DiscosService } from '../../discos.service';
 
 @Component({
   selector: 'disco-lista-page',
