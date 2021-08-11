@@ -1,16 +1,18 @@
 package com.study.services;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Service;
 
-import com.study.entidades.Pessoa;
+import com.study.entidades.Disco;
 import com.study.repository.DiscoRepositorio;
 import com.study.repository.PessoaRepositorio;
 
 @Service
 @EnableJpaRepositories("com.study.repository")
-public class PessoaServiceImpl implements PessoaService {
+public class DiscoServiceImpl implements DiscoService {
 	
 	@Autowired	
 	PessoaRepositorio pessoaRepositorio;
@@ -19,13 +21,32 @@ public class PessoaServiceImpl implements PessoaService {
 	DiscoRepositorio discoRepositorio;
 
 	@Override
-	public Pessoa save(Pessoa pessoa) {
+	public Disco save(Disco disco) {
 		try {
-			return pessoaRepositorio.save(pessoa);
+			return discoRepositorio.save(disco);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return pessoa;
+		return disco;
+	}
+	
+	@Override
+	public void remove(Disco disco) {
+		try {
+			discoRepositorio.delete(disco);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public ArrayList<Disco> listarDiscos() {
+		try {
+			return (ArrayList<Disco>) discoRepositorio.findAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }
